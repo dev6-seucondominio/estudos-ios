@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var idadeCachorro: UILabel!
+    @IBOutlet weak var idadeCachorroInput: UITextField!
+    
+    @IBAction func descobrirIdade(_ sender: Any) {
+        if (idadeCachorroInput.text! == "") { return }
+        
+        var idade = Int(idadeCachorroInput.text!)!
+        if (idade <= 0) { return }
+        
+        idade = idade * 6
+        idadeCachorro.text = String(idade)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
 }
-
